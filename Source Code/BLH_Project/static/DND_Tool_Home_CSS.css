@@ -1,0 +1,479 @@
+.body{
+	margin: 0;
+	background-image: url('D:\My Documents/projecct/image/ooclback3.png');
+	background-size: cover;
+}
+
+.headerBar{
+  height: 50px;
+  width: 100%;
+  background-color: #333;
+  box-shadow: 7px 7px 3px rgba(0,0,0,0.3);
+}
+
+.headerAbout{
+  height:40px; 
+  width: 200px
+  margin-top: 10px; 
+  margin-right: 10px;
+  margin-left: 10px; 
+  color: white; 
+  text-decoration: none; 
+  font-family: Courier New;
+}
+
+
+
+.headerDocumentation{
+  height:40px;
+  margin-left: 10px; 
+  color: white;
+  text-decoration: none;
+  font-family: Courier New;
+}
+
+.headerLogo{
+  height: 30px;
+  width: 100px;
+
+}
+
+
+.bannerImg{
+	height: 480px;
+	width: 100%;
+	background-size: 2000px 370px; 
+	background-repeat: no-repeat;  
+	display:none;
+	box-shadow: 7px 7px 3px rgba(0,0,0,0.3);
+}
+.divbannerImg2{
+	height: 480px;
+	width: 100%;
+	background-size: 2000px 370px; 
+	background-repeat: no-repeat;  
+	box-shadow: 7px 7px 3px rgba(0,0,0,0.3);
+}
+
+.divBannerImg {
+	columnsolor: white;
+	font-weight: bold;
+	position: absolute;
+	top: 23%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 50%;
+	padding: 20px;
+	text-align: center;
+}
+
+.divBannerText {
+	color: white;
+	font-weight: bold;
+	position: absolute;
+	top: 35%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 50%;
+	padding: 20px;
+	text-align: center;
+}
+
+.bannerText{
+	text-shadow: 2px 2px 6px #000; 
+	font-size: 80px; 
+	height: 100px; 
+	width: 930px;
+}
+
+.divForm{
+	height: 315px;
+	width: 96%; 
+	padding: 1% 2%;
+}
+
+.tableForm{
+	height: 315px;  
+	width:100%; 
+	text-align: center;
+}
+
+
+/*--------------Invoice Card-----------------*/
+.divInvoCard{
+	height: 100%; 
+	width: 300px; 
+	padding-top: 50px; 
+		background:rgba(255,255,255,0.8); 
+	box-shadow: 7px 7px 3px rgba(0,0,0,0.3);
+}
+
+.divCardInvo{
+	background-image: url('/static/image/invoice.png');
+	background-size: cover;  
+	background-repeat: no-repeat; 
+	background-size: contain; 
+		width: 100%; 
+	height:74%; 
+	background-position: center;
+}
+
+.InvoMiddle {
+  transition: 1s ease;
+  position: absolute;
+    opacity: 0;
+   top: 76.3%;
+  left: 41.9%;
+   height: 310px; 
+	width: 300px; 
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  background:rgba(105,105,105,0.5); 
+}
+
+.divInvoCard:hover .divCardInvo{
+  opacity: 0.3;
+}
+.divInvoCard:hover{
+ background:rgba(0,0,0,1); 
+}
+
+.divInvoCard:hover .InvoMiddle {
+  opacity: 1;
+}
+
+.divInvoCard:hover .divCardTextTitle {
+ font-family: Courier New; 
+	font-size: 22px;
+	color: rgba(0,0,0,0.5)
+}
+
+
+
+
+
+/*--------------Triagulation Card-----------------*/
+
+.TriaMiddle {
+  transition: .5s ease;
+  position: absolute;
+    opacity: 0;
+   top: 76.3%;
+  left: 9.95%;
+  height: 310px; 
+	width: 300px; 
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  background:rgba(105,105,105,0.5); 
+}
+
+.divCardTri{
+	background-image: url('/static/image/traigulation.png'); 
+	background-size: cover;  
+	background-repeat: no-repeat; 
+	background-size: contain; 
+	width: 100%; 
+	height:74%; 
+	background-position: center;
+}
+
+.divTriCard{
+	height: 100%; 
+	width: 300px; 
+	padding-top: 35px; 
+background:rgba(255,255,255,0.8); 
+	box-shadow: 7px 7px 3px rgba(0,0,0,0.3);
+}
+
+
+.divTriCard:hover .divCardTri{
+  opacity: 0.3;
+}
+.divTriCard:hover{
+ background:rgba(0,0,0,1); 
+}
+
+.divTriCard:hover .TriaMiddle {
+  opacity: 1;
+}
+
+
+.divTriCard:hover .divCardTextTitle {
+ font-family: Courier New; 
+	font-size: 22px;
+	color: rgba(0,0,0,0.5)
+}
+
+
+
+/*--------------Mass Refresh Card-----------------*/
+
+
+.MassMiddle {
+  transition: .5s ease;
+  position: absolute;
+    opacity: 0;
+   top: 76.3%;
+  left: 25.9%;
+  height: 310px; 
+	width: 300px; 
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  background:rgba(105,105,105,0.5); 
+}
+
+.divCardMass{
+	background-image: url('/static/image/massrefresh.png'); 
+	background-size: cover;  
+	background-repeat: no-repeat; 
+	background-size: contain; 
+		width: 100%; 
+	height:74%; 
+	background-position: center;
+}
+
+.divMassCard{
+	height: 100%; 
+	width: 300px; 
+	padding-top: 50px; 
+		background:rgba(255,255,255,0.8); 
+	box-shadow: 7px 7px 3px rgba(0,0,0,0.3);
+}
+
+.divMassCard:hover .divCardMass{
+  opacity: 0.3;
+}
+.divMassCard:hover{
+  background:rgba(0,0,0,1); 
+}
+
+.divMassCard:hover .MassMiddle {
+  opacity: 1;
+}
+
+
+.divMassCard:hover .divCardTextTitle {
+ font-family: Courier New; 
+	font-size: 22px;
+	color: rgba(0,0,0,0.5)
+}
+
+
+
+/*--------------Adjustment Card-----------------*/
+
+.divAdjustCard{
+	height: 100%; 
+	width: 300px; 
+	padding-top: 50px; 
+		background:rgba(255,255,255,0.8); 
+	box-shadow: 7px 7px 3px rgba(0,0,0,0.3);
+}
+
+.AdjustMiddle {
+  transition: .5s ease;
+  position: absolute;
+    opacity: 0;
+  top: 76.3%;
+  left: 57.85%;
+ height: 310px; 
+	width: 300px; 
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  background:rgba(105,105,105,0.5); 
+}
+
+.divCardAdjust{
+	background-image: url('/static/image/adjustment.png');
+	background-size: cover;  
+	background-repeat: no-repeat; 
+	background-size: contain; 
+		width: 100%; 
+	height:74%; 
+	background-position: center;
+}
+
+.divAdjustCard:hover .divCardAdjust{
+  opacity: 0.3;
+}
+.divAdjustCard:hover{
+  background:rgba(0,0,0,1); 
+}
+
+.divAdjustCard:hover .AdjustMiddle {
+  opacity: 1;
+}
+
+
+.divAdjustCard:hover .divCardTextTitle {
+ font-family: Courier New; 
+	font-size: 22px;
+	color: rgba(0,0,0,0.5)
+}
+
+
+/*--------------Extraction Card-----------------*/
+
+.ExtractMiddle {
+  transition: .5s ease;
+  position: absolute;
+    opacity: 0;
+ top: 76.3%;
+  left: 73.85%;
+  height: 310px; 
+	width: 300px; 
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  background:rgba(105,105,105,0.5); 
+}
+
+.divCardExtract{
+	background-image: url('/static/image/extraction.png'); 
+	background-size: cover;  
+	background-repeat: no-repeat; 
+	background-size: contain; 
+		width: 100%; 
+	height:74%;  
+	background-position: center;
+}
+
+.divExtractCard{
+	height: 100%; 
+	width: 300px; 
+	padding-top: 50px; 
+background:rgba(255,255,255,0.8); 
+	box-shadow: 7px 7px 3px rgba(0,0,0,0.3);
+}
+
+
+.divExtractCard:hover .divCardExtract{
+  opacity: 0.3;
+}
+.divExtractCard:hover{
+ background:rgba(0,0,0,1); 
+}
+
+.divExtractCard:hover .ExtractMiddle {
+  opacity: 1;
+}
+
+.divExtractCard:hover .divCardTextTitle {
+ font-family: Courier New; 
+	font-size: 22px;
+	color: rgba(0,0,0,0.5)
+}
+
+
+
+
+/*--------------FRD900 Card-----------------*/
+
+.FDR900Middle {
+  transition: .5s ease;
+  position: absolute;
+    opacity: 0;
+   top: 76.3%;
+  left: 89.85%;
+ height: 310px; 
+	width: 300px; 
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  background:rgba(105,105,105,0.5); 
+}
+
+.divFDR900Card{
+	height: 100%; 
+	width: 300px; 
+	padding-top: 50px; 
+	background:rgba(255,255,255,0.8);  
+	box-shadow: 7px 7px 3px rgba(0,0,0,0.3);
+}
+
+
+.divCardFDR900{
+	background-image: url('/static/image/frd900.png'); 
+	background-size: cover;  
+	background-repeat: no-repeat; 
+	background-size: contain; 
+		width: 100%; 
+	height:74%; 
+	background-position: center;
+}
+
+.divFDR900Card:hover .divCardFDR900{
+  opacity: 0.3;
+}
+
+.divFDR900Card:hover{
+ background:rgba(0,0,0,1); 
+}
+
+.divFDR900Card:hover .FDR900Middle {
+  opacity: 1;
+}
+
+.divFDR900Card:hover .divCardTextTitle {
+ font-family: Courier New; 
+	font-size: 22px;
+	color: rgba(0,0,0,0.5)
+}
+
+
+
+
+
+
+
+.divCardTextTitle{
+	font-family: Courier New; 
+	font-size: 22px;
+	color: black
+}
+
+.titleText{
+
+	font-size: 18px;
+	color:white;
+	font-family: Courier New; 
+}
+
+.decriptionText{
+	font-size: 15px;
+	color:white;
+	font-family: Courier New;
+}
+
+.descriptionCard {
+  height: 200px; 
+	width: 250px; 
+	color: white;
+padding-top: 5%;
+	  font-family: Courier New;
+	border: 2px solid white;
+	font-size: 15px;
+}
+
+
+
+
+.middleDescription {
+  height: 80%; 
+	width: 300px; 
+	padding-top: 12%;
+}
+.titleCard {
+  height: 200px; 
+	width: 250px; 
+	color: white;
+padding-top: 12%;
+	  font-family: Courier New;
+	border: 2px solid white;
+	font-size: 18px;
+}
+

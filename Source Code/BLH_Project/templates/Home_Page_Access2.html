@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>BLH Ticketing System</title>
+		<link rel="shortcut icon" href="/static/image/logo.webp">
+		<link rel="stylesheet" type="text/css" href="/static/Home_Page_CSS2.css">
+		<!-- <meta http-equiv="refresh" content="15"> -->
+	</head>
+
+<!--------------------------------------------------------------------------------->
+
+	<form id="myForm" action="http://localhost:5000/BLH_REQUEST_SERVICE_SYSTEM/Home" method="POST">
+		<body class="form">
+			<table class = "formTable">
+				<td class = "tdTable0">
+					<div class = "profile" align="center">
+						<img src="/static/image/logo.webp" class="profileImgSet">
+						<p class="categoryTitle12"  style=" background-color: #fff;">Name</p>
+						<p class="categoryTitle12">{{full_name}}</p>
+						<p class="categoryTitle12" style=" background-color: #fff;">Employe ID</p>
+						<p class="categoryTitle12">{{user_id}}</p>
+						<p class="categoryTitle12" style=" background-color: #fff;">Department</p>
+						<p class="categoryTitle12">{{department}}</p>
+					</div>
+				</td>
+				<td class = "tdTable1">
+					<div class = "boardTable1" align="center">
+						<div class = "trBoard12" align="center">
+							<p class="categoryTitle2">BLH SERVICE REQUEST SYSTEM</p>
+						</div>
+						<div class = "trList1" align="center">
+							<p class="ListTitle">SERVICE DETAILS</p>
+						</div>
+						<div class = "trList2" id = "trList2" align="center">
+						</div>
+					</div>
+				</td>
+				<td class = "tdTable3">
+					<div class = "boardTable3" align="center">
+						<table class = "funtionButton">
+							<tr class = "tdFuntion">
+								<img src="/static/image/Picture5.png" class = "ticketAdd" onclick="openTicketAdd()">
+							</tr >
+							<tr class = "tdFuntion">
+								<img src="/static/image/Picture1.png" class = "ticketAdd" onclick="openTicketAdd2()">
+							</tr>
+							<tr class = "tdFuntion">
+								<img src="/static/image/Picture7.png" class = "ticketAdd" onclick="openLogout()">
+							</tr>
+						</table>
+					</div>
+				</td>
+
+				<div class ="addTicketForm" id ="addTicketForm">
+					<div class = "trList1" style="background-color: yellow" align="center">
+						<p class="ListTitle" style="color: black">ADD TICKET</p>
+					</div>
+					<input type="text" name="title1" class = "formText" style="width: 90%" align="center" placeholder="Service Title">
+					<select  id="category1" name = "category1"  class="formText" style="width: 90%" >
+							<option value="" disabled="" selected="">Select Category:</option>
+							<option value = "Repair">Repair</option>
+							<option value = "Replace">Replace</option>
+					</select>
+					<textarea  name="description1" class = "formText2" align="center" placeholder="Service description here..." maxlength="300" cols="50"></textarea>
+					<button type = "button" class ="ticketCancel" onclick="add_request()" style="background-color: yellow">REQUEST SERVICE</button>
+					<button type = "button" class ="ticketCancel" value="CANCEL" onclick="closeTicketAdd()">CANCEL</button>
+				</div>
+				<div class ="addTicketForm2" id ="addTicketForm2">
+					<div class = "trList1" style="background-color: yellow" align="center">
+						<p class="ListTitle" style="color: black">ADD REQUEST</p>
+					</div>
+					<input type="text" name="title2" class = "formText" style="width: 90%" align="center" placeholder="Service Title">
+					<input type="text" name="category2" id = "category2" class = "formText" style="width: 90%" align="center" >
+					<textarea  name="description2" class = "formText2" align="center" placeholder="Service description here..." maxlength="300" cols="50"></textarea>
+					<button type = "button" class ="ticketCancel" onclick="add_request2()" style="background-color: yellow">REQUEST SERVICE</button>
+					<button type = "button" class ="ticketCancel" value="CANCEL" onclick="closeTicketAdd2()">CANCEL</button>
+				</div>
+				<div class ="logOutForm" id ="logOutForm">
+					<div class = "trList1" style="background-color: yellow" align="center">
+						<p class="ListTitle" style="color: black">LOG OUT</p>
+					</div>
+					<button  type = "button" name="" class ="ticketSubmit" onclick="logout()">LOGOUT</button>
+					<button  type = "button" name="" class ="ticketCancel" value="CANCEL" onclick="closeLogout()">CANCEL</button>
+				</div>
+				<div class ="ticketDetail" id ="ticketDetail" align="center">
+					<p class="requestDetailF">SERVICE FULL DETAILS</p>
+					<div class ="ticketDetail2" id ="ticketDetail2" align="center">
+						<input type="text" id = "detail_requester" name="detail_requester" class = "formText52" align="center" placeholder="Request Person" disabled="true">
+						<input type="text" id = "detail_department" name="detail_department" class = "formText53" align="center" placeholder="Internal Med/Family Med" disabled="true">
+						<input type="text" id = "detail_id"  name="detail_id" class = "formText3" align="center" placeholder="Service Number" >
+						<input type="text" id = "detail_level"  name="detail_level" class = "formText3" align="center" placeholder="Service Level" disabled="true">
+						<input type="text" id = "detail_category"  name="detail_category" class = "formText4" align="center" placeholder="Service Category" disabled="true" value="Request">
+						<input type="text" id = "detail_title"  name="detail_title" class = "formText5" align="center" placeholder="Service Title" disabled="true">
+						<textarea  id = "detail_description"  name="detail_description" class = "formText6" align="center" placeholder="Service description here..." maxlength="300" cols="50" disabled="true" ></textarea>
+						<input type="text" id = "detail_time"  name="detail_time" class = "formTexts7" align="center" placeholder="Service Time" disabled="true">
+						<input type="text" id = "detail_date" name="detail_date" class = "formTexts7" align="center" placeholder="Service Date" disabled="true">
+						<input type="text" id = "detail_assign" name="detail_assign" class = "formText5" align="center" placeholder="Assigned Person" disabled="true">
+						<input type="text" id = ""  name="" class = "formText5" style="background-color: yellow" align="center" value="Service Process Conversation" disabled="true">
+						<div class = "ticketConversation" align="center" id="ticketConversation">
+						</div>
+						<input type="text" name="replytext" class = "formText" align="center" maxlength="89" placeholder="Reply Here...">
+						<button  type="button" name="" class ="ticketSubmit"  style="background: #add8e6;" onclick="convo_add()">REPLAY</button>
+						<button type="button" name="" class ="ticketSubmit" onclick="OpenPendTicket()" style="background: #add8e9;">SERVICE PEND</button>
+						<button type="button" name="" class ="ticketSubmit" onclick="OpenCloseTicket()" style="background: #add8e6;">SERVICE DONE</button>
+						<button type="button" class ="ticketCancel" value="CANCEL" onclick="closeTicketDetail()">CLOSE</button>
+					</div>
+				</div>
+				<div class ="ticketClose" id ="ticketClose" align="center">
+					<button type="button" name="" class ="ticketSubmit" onclick="close_ticket()">CLOSE REQUEST</button>
+					<button type="button" name="" class ="ticketSubmit"  onclick="CloseOpenTicket()" style="background: #add8e6;">CANCEL</button>
+				</div>
+
+				<div class ="ticketClose" id ="ticketClose2" align="center">
+					<button type="button name="" class ="ticketSubmit" onclick="pend_ticket()">PEND SERVICE</button>
+					<button  type="button name="" class ="ticketSubmit" onclick="ClosePendTicket()" style="background: #add8e6;">CANCEL</button>
+				</div>
+				<input type="text" name="process" id = "process" style="display: none;">
+				<input type="text" name="selected_open" id = "selected_open" style="display: none;">
+			</table>
+		</body>
+	</form>
+</html>
+
+
+<script type="text/javascript">
+	var c = 2;
+	Frequest_id = []
+	Frequest_title= []
+	Frequest_category= []
+	Frequest_description= []
+	Frequest_time= []
+	Frequest_date= []
+	Frequest_level= []
+	commentinfo = []
+	commentreply = []
+	commentdisplay = []
+
+	counter = '{{column_count}}'
+	function onload_add_feed()
+	{
+		for (i = 0; counter > i; i++)
+		{
+		var a = document.createElement("INPUT");
+		var b = document.createElement("INPUT");
+		var d = document.createElement("INPUT");
+		var c = document.createElement("INPUT");
+		var e = document.createElement("TEXTAREA");
+		var f = document.createElement("BUTTON");
+
+		a.setAttribute("type", "text");
+		b.setAttribute("type", "text");
+		c.setAttribute("type", "text");
+		d.setAttribute("type", "text");
+		f.setAttribute("type", "button");
+
+		a.setAttribute("name", "service_id" + (i+1));
+		b.setAttribute("name", "service_title" + (i+1));
+		c.setAttribute("name", "service_status_DT" + (i+1));
+		e.setAttribute("name", "service_description" + (i+1));
+		d.setAttribute("name", "service_category" + (i+1));
+		f.setAttribute("name", "service" + (i+1));
+
+		a.setAttribute("id", "service_id" + (i+1));
+		b.setAttribute("id", "service_title" + (i+1));
+		c.setAttribute("id", "service_status_DT" + (i+1));
+		e.setAttribute("id", "service_description" + (i+1));
+		d.setAttribute("id", "service_category" + (i+1));
+		f.setAttribute("id", i+1);
+
+		a.setAttribute("value", Frequest_id[i]);
+		b.setAttribute("value", Frequest_title[i]);
+		c.setAttribute("value", Frequest_level[i] + " (" + Frequest_time [i] + " - " + Frequest_date[i] +")" );
+		d.setAttribute("value", Frequest_category [i]);
+		f.setAttribute("value", i+1);
+
+
+		a.setAttribute("class", "ticketID2");
+		b.setAttribute("class", "ticketTitleAdd");
+		c.setAttribute("class", "ticketItem");
+		e.setAttribute("class", "ticketDescAdd");
+		d.setAttribute("class", "ticketLevelAdd");
+		f.setAttribute("class", "ticketOpen");
+
+		a.setAttribute("disabled", "true");
+		b.setAttribute("disabled", "true");
+		c.setAttribute("disabled", "true");
+		e.setAttribute("disabled", "true");
+		d.setAttribute("disabled", "true");
+
+		f.setAttribute("onclick", "open_detail(this.id)")
+		e.appendChild(document.createTextNode(Frequest_description[i]));
+		f.appendChild(document.createTextNode("OPEN"));
+		document.getElementById("trList2").appendChild(a);
+		document.getElementById("trList2").appendChild(b);
+		document.getElementById("trList2").appendChild(d);
+		document.getElementById("trList2").appendChild(c);
+		document.getElementById("trList2").appendChild(e);
+		document.getElementById("trList2").appendChild(f);
+		}
+	}
+
+	function convo_add()
+	{
+		var a = document.createElement("INPUT");
+
+		a.setAttribute("type", "text");
+		a.setAttribute("name", "convo_add" + i);
+		a.setAttribute("id", "ticketID" + i);
+		a.setAttribute("value", "");
+		a.setAttribute("class", "formText7");
+		a.setAttribute("maxlength", "40");
+		a.setAttribute("disabled", "true");
+		document.getElementById("ticketConversation").appendChild(a);
+		c++;
+	}
+
+
+	function convo_add_form()
+	{
+
+		count = '{{commentcount}}'
+
+		for (c = 0; count > c; c++)
+		{
+			var para = document.createElement("P");
+			var a = document.createElement("INPUT");
+
+			a.setAttribute("type", "text");
+			a.setAttribute("value", commentreply[c]);
+			a.setAttribute("disabled", "true");
+			a.setAttribute("class","comments" + commentdisplay[c]);
+
+			para.setAttribute("class", "comment"+ commentdisplay[c]);
+			para.innerHTML = commentinfo[c];
+
+			document.getElementById("ticketConversation").appendChild(a);
+			document.getElementById("ticketConversation").appendChild(para);
+
+		}
+	}
+
+
+	function convo_add(){
+		document.getElementById("process").value='comment'
+		document.getElementById("myForm").submit();
+	}
+
+	function OpenPendTicket() {
+	  document.getElementById("ticketClose2").style.display = "block";
+	   document.getElementById("ticketClose").style.display = "none";
+	   event.preventDefault();
+	}
+
+	function openTicketAdd() {
+	  document.getElementById("addTicketForm").style.display = "block";
+	  document.getElementById("logOutForm").style.display = "none";
+	  document.getElementById("ticketDetail").style.display = "none";
+	  document.getElementById("addTicketForm2").style.display = "none";
+	    event.preventDefault();
+	}
+
+	function closeTicketAdd() {
+	  document.getElementById("addTicketForm").style.display = "none";
+	   event.preventDefault();
+	}
+
+	function openTicketAdd2() {
+		document.getElementById("addTicketForm2").style.display = "block";
+		document.getElementById("addTicketForm").style.display = "none";
+	  document.getElementById("logOutForm").style.display = "none";
+	   document.getElementById("ticketDetail").style.display = "none";
+	   document.getElementById("category2").value = "Request";
+	    event.preventDefault();
+	}
+
+	function closeTicketAdd2() {
+	  document.getElementById("addTicketForm2").style.display = "none";
+	   event.preventDefault();
+	}
+	function openUserAdd() {
+	  document.getElementById("addUserForm").style.display = "block";
+	  document.getElementById("addTicketForm").style.display = "none";
+	  document.getElementById("editUserForm").style.display = "none";
+	  document.getElementById("logOutForm").style.display = "none";
+	   document.getElementById("ticketDetail").style.display = "none";
+	    event.preventDefault();
+	}
+
+	function closeAddUser() {
+	  document.getElementById("addUserForm").style.display = "none";
+	}
+	function openUserEdit() {
+	  document.getElementById("editUserForm").style.display = "block";
+	  document.getElementById("addTicketForm").style.display = "none";
+	  document.getElementById("addUserForm").style.display = "none";
+	  document.getElementById("logOutForm").style.display = "none";
+	   document.getElementById("ticketDetail").style.display = "none";
+	    event.preventDefault();
+	}
+
+	function closeEditUser() {
+	  document.getElementById("editUserForm").style.display = "none";
+	}
+	function openLogout() {
+	  document.getElementById("logOutForm").style.display = "block";
+	  document.getElementById("addTicketForm").style.display = "none";
+	   document.getElementById("ticketDetail").style.display = "none";
+	    document.getElementById("addTicketForm2").style.display = "none";
+	    event.preventDefault();
+	}
+
+	function closeLogout() {
+	  document.getElementById("logOutForm").style.display = "none";
+	   event.preventDefault();
+	}
+
+	function openDetailTicket() {
+	  document.getElementById("ticketDetail").style.display = "block";
+	 document.getElementById("logOutForm").style.display = "none";
+	   document.getElementById("addTicketForm").style.display = "none";
+	  document.getElementById("addUserForm").style.display = "none";
+	  document.getElementById("editUserForm").style.display = "none";
+	   event.preventDefault();
+	}
+
+	function closeTicketDetail() {
+	  document.getElementById("ticketDetail").style.display = "none";
+	   event.preventDefault();
+	}
+
+	function OpenCloseTicket() {
+	  document.getElementById("ticketClose").style.display = "block";
+	   event.preventDefault();
+	}
+
+	function CloseOpenTicket() {
+	  document.getElementById("ticketClose").style.display = "none";
+	   event.preventDefault();
+	}
+
+
+	function add_request(){
+		document.getElementById("process").value='add_ticket'
+		document.getElementById("myForm").submit();
+	}
+	function add_request2(){
+		document.getElementById("process").value='add_ticket'
+		document.getElementById("myForm").submit();
+	}
+
+	function add_user(){
+		if (document.getElementById("password").value != document.getElementById("conpassword").value) {
+			alert("Password and Confirm Password do not match");
+		}
+		else {
+		document.getElementById("process").value='add_user';
+		document.getElementById("myForm").submit();
+		}
+
+	}
+	function pend_ticket(){
+		document.getElementById("process").value='pend_ticket'
+		document.getElementById("myForm").submit();
+	}
+
+	function search_user(){
+		document.getElementById("process").value='search_user'
+		document.getElementById("myForm").submit();
+	}
+
+	function edit_user(){
+		document.getElementById("process").value='edit_user'
+		document.getElementById("myForm").submit();
+	}
+
+	function open_detail(clicked_id){
+		document.getElementById("selected_open").value = document.getElementById('service_id'+clicked_id).value
+		document.getElementById("process").value='detail_open'
+		document.getElementById("myForm").submit();
+	}
+
+	function align_personel(){
+		document.getElementById("process").value='assign_personel'
+		document.getElementById("myForm").submit();
+	}
+	function close_ticket(){
+		document.getElementById("process").value='close_ticket'
+		document.getElementById("myForm").submit();
+	}
+
+
+	function logout(){
+		document.getElementById("process").value='logout'
+		document.getElementById("myForm").submit();
+	}
+
+
+	window.onload = onloadfunc();
+		function onloadfunc()
+		{
+			 {% for col in Frequest_id %}
+		          Frequest_id.push('{{col}}')
+		    {% endfor %}
+			{% for col in Frequest_title %}
+		          Frequest_title.push('{{col}}')
+		    {% endfor %}
+		    {% for col in Frequest_category %}
+		          Frequest_category.push('{{col}}')
+		    {% endfor %}
+		    {% for col in Frequest_description %}
+		         Frequest_description.push('{{col}}')
+		    {% endfor %}
+		    {% for col in Frequest_time %}
+		          Frequest_time.push('{{col}}')
+		    {% endfor %}
+		    {% for col in Frequest_date %}
+		          Frequest_date.push('{{col}}')
+		    {% endfor %}
+		    {% for col in Frequest_level %}
+		          Frequest_level.push('{{col}}')
+		    {% endfor %}
+
+		    onload_add_feed()
+		pyProcess = "{{pyProcess}}"
+
+		if (pyProcess == 'login'){
+
+
+		}else if (pyProcess == 'AllviewDone'){
+		}
+
+		else if (pyProcess == 'addTicket')
+		{
+			alert('Service was successfully added to request list please wait for assign personel')
+
+		}
+		else if (pyProcess == 'addUser'){
+			alert('Account was successfully created')
+			document.getElementById("process").value='login'
+		}
+		else if (pyProcess == 'search_fail'){
+			alert('No Account Found')
+			document.getElementById("process").value='login'
+		}
+		else if (pyProcess == 'search_success')
+		{	document.getElementById("editUserForm").style.display = "block";
+			document.getElementById("edit_id").value='{{edit_id}}';
+			document.getElementById("edit_fname").value='{{fname}}';
+			document.getElementById("edit_lname").value='{{mname}}';
+			document.getElementById("edit_mname").value='{{lname}}';
+			document.getElementById("edit_department").value='{{edit_department}}';
+			document.getElementById("process").value='login'
+		}
+		else if (pyProcess == 'edit_success'){
+			alert('Account was successfully updated')
+		}
+		else if (pyProcess == 'selected_open')
+		{	document.getElementById("ticketDetail").style.display = "block";
+			document.getElementById("detail_requester").value='Requested By:' + '{{detail_department_head_fname}}' + ' (' + '{{detail_department_head_id}}' +')';
+			document.getElementById("detail_department").value='{{detail_department}}';
+			document.getElementById("detail_id").value ='{{detail_request_id}}';
+			document.getElementById("detail_level").value='{{detail_request_level}}';
+			document.getElementById("detail_category").value='{{detail_request_category}}';
+			document.getElementById("detail_title").value='{{detail_request_title}}';
+			document.getElementById("detail_time").value='{{detail_start_time}}';
+			document.getElementById("detail_date").value='{{detail_start_date}}';
+			document.getElementById("detail_description").appendChild(document.createTextNode('{{detail_request_description}}'));
+			if ('{{detail_maintenance_fname}}' == 'None'){
+				document.getElementById("detail_assign").value='Pending to assign';
+				}
+			else{
+				document.getElementById("detail_assign").value='{{detail_maintenance_fname}}' + ' (' + '{{detail_maintenance_id}}' +')';
+			}
+
+		    {% for col in commentinfo %}
+		     commentinfo.push('{{col}}')
+		{% endfor %}
+		{% for col in commentreply %}
+	      commentreply.push('{{col}}')
+		{% endfor %}
+		{% for col in commentdesign %}
+	     commentdisplay.push('{{col}}')
+		{% endfor %}
+		    convo_add_form()
+
+		}
+		else if (pyProcess == 'assign_complete'){
+			alert('Assigning personel success')
+			document.getElementById("process").value='login'
+		}
+		else if (pyProcess == 'close_ticket')
+		{
+			alert('Ticket was closed successfully ')
+			document.getElementById("ticketDetail").style.display = "none";
+			document.getElementById("process").value='login'
+
+		}
+		else if (pyProcess == 'pend_ticket')
+		{
+			alert('Ticket was pend successfully ')
+			document.getElementById("ticketDetail").style.display = "none";
+			document.getElementById("process").value='login'
+
+		}
+		else if(pyProcess == 'selectedDone'){
+			counterS = '{{column_countS}}'
+			{% for col in SFrequest_id %}
+		          Frequest_id.push('{{col}}')
+		    {% endfor %}
+			{% for col in SFrequest_title %}
+		          Frequest_title.push('{{col}}')
+		    {% endfor %}
+		    {% for col in SFrequest_category %}
+		          Frequest_category.push('{{col}}')
+		    {% endfor %}
+		    {% for col in SFrequest_description %}
+		         Frequest_description.push('{{col}}')
+		    {% endfor %}
+		    {% for col in SFrequest_time %}
+		          Frequest_time.push('{{col}}')
+		    {% endfor %}
+		    {% for col in SFrequest_date %}
+		          Frequest_date.push('{{col}}')
+		    {% endfor %}
+		    {% for col in SFrequest_level %}
+		          Frequest_level.push('{{col}}')
+		    {% endfor %}
+			onload_add_feedS()
+			document.getElementById('{{selectedviewid}}').style.display = "block";
+		}
+		else if (pyProcess == 'searchDone'){
+			counterS = '{{column_countS}}'
+			{% for col in SFrequest_id %}
+		          Frequest_id.push('{{col}}')
+		    {% endfor %}
+			{% for col in SFrequest_title %}
+		          Frequest_title.push('{{col}}')
+		    {% endfor %}
+		    {% for col in SFrequest_category %}
+		          Frequest_category.push('{{col}}')
+		    {% endfor %}
+		    {% for col in SFrequest_description %}
+		         Frequest_description.push('{{col}}')
+		    {% endfor %}
+		    {% for col in SFrequest_time %}
+		          Frequest_time.push('{{col}}')
+		    {% endfor %}
+		    {% for col in SFrequest_date %}
+		          Frequest_date.push('{{col}}')
+		    {% endfor %}
+		    {% for col in SFrequest_level %}
+		          Frequest_level.push('{{col}}')
+		    {% endfor %}
+
+		    onload_add_feedSearch()
+		    document.getElementById('searchview').style.display = "block";
+		}
+		else if ( pyProcess == 'commentDone'){
+			alert('Messege has been send!')
+		}
+
+
+	}
+
+
+</script>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>BLH Ticketing System</title>
+		<link rel="shortcut icon" href="/static/image/logo.webp">
+		<link rel="stylesheet" type="text/css" href="/static/Login_Page_CSS.css">
+
+	</head>
+
+<!--------------------------------------------------------------------------------->
+
+	<form action="http://localhost:5000/BLH_REQUEST_SERVICE_SYSTEM" method="POST" style=" padding: 0;">
+		<body class="form">
+		<div class="background" align="center">
+				<div class="loginFrom" align="center">
+						<span >
+							<image src = "/static/image/logo.webp" class = "loginLogo">
+						</span>
+						<span >
+							<p class="loginTitle3">Service Request System</p>
+						</span>
+
+
+						<div class = "inputDiv">
+							<table class = "userTable">
+								<td class = "tdUseImg">
+									<image src = "/static/image/man-user.png" class = "userImage">
+								</td>
+								<td class = "tdUseInput">
+									<input type="text" name="username" class = "username" placeholder="Username">
+								</td>
+							</table>
+						</div>
+
+						<div class = "inputDiv">
+							<table class = "userTable">
+								<td class = "tdUseImg">
+									<image src = "/static/image/locked-padlock.png" class = "userImage">
+								</td>
+								<td class = "tdUseInput">
+									<input type="Password" name="password" class = "username" placeholder="Password">
+								</td>
+						</table>
+						</div>
+
+						<div class="buttonSubmit" align="center">
+							<button class="submit">
+								LOGIN
+							</button>
+						</div>
+
+						<div class="forgotPassword1">
+							<a class="forgotPassword" href="#" align="center">
+								Forgot Password?
+							</a>
+						</div>
+				</div>
+		</div>
+		</body>
+	</form>
+	<script>
+		window.onload = onloadfunc();
+		function onloadfunc()
+		{
+			pyProcess = "{{pyProcess}}"
+
+			if (pyProcess == 'fail_login'){
+				alert('Fail to login, please check your username and password')
+				}
+		}
+	</script>

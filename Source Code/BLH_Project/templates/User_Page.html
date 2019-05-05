@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>BLH Ticketing System</title>
+		<link rel="shortcut icon" href="D:/My Documents/project/project2/projecct/image/logo.webp">
+		<link rel="stylesheet" type="text/css" href="D:/My Documents/project/project2/projecct/User_Page_CSS.css">
+
+	</head>
+	
+<!--------------------------------------------------------------------------------->
+
+	<form action="#" method="POST">
+		<body class="form">
+			<table class = "formTable">
+				<td class = "tdTable1">
+					<div class = "boardTable1" align="center">
+						<!-- <div class = "trBoard1" align="center">
+							<table class = "profileTable">
+								<td class = "profileImg" align="center">
+									<image src = "D:/My Documents/project/project2/projecct/image/profile.jpg" class = "profileImgSet">
+								</td>
+								<td class = "profileDesc">
+									<span>
+										<p class="profileDescNameSet">TICKETING PORTAL</p>		
+									</span>
+									<span>
+										<p class="profileDescIDSet">Employee ID: 123456</p>	
+									</span>
+									<span>
+										<p class="profileDescIDSet">Department: Engineering</p>	
+									</span>
+								</td>
+							</table>
+						</div>
+						<div class = "trBoard2" align="center">
+							<p class="categoryTitle">SERVICE CATEGORY</p>	
+						</div>
+						<div class = "trBoard3" align="center">
+							<table class = "categoryTable" align="center">
+								<td class = "tdCategory" align="center">
+									<p class="categoryTitleSet">REPAIR</p>	
+									<input type="input" name="" class="categoryNumberSet" value="0" disabled="true">
+								</td>
+								<td class = "tdCategory" align="center">
+									<p class="categoryTitleSet">REQUEST</p>	
+									<input type="input" name="" class="categoryNumberSet" value="0"  disabled="true">
+								</td>
+								<td class = "tdCategory" align="center">
+									<p class="categoryTitleSet">REPAIR</p>
+									<input type="input" name="" class="categoryNumberSet" value="0" align="center"  disabled="true">
+								</td>
+							</table>
+						
+						</div>
+						<div class = "trBoard2" align="center">
+							<p class="categoryTitle">SERVICE OVERVIEW</p>	
+						</div>
+						<div class = "trBoard5">
+							<table class = "categoryTable" align="center">
+								<td class = "tdCategory" align="center">
+									<p class="categoryTitleSet">UNASSIGN</p>	
+									<input type="input" name="" class="categoryNumberSet" value="0" disabled="true">
+								</td>
+								<td class = "tdCategory" align="center">
+									<p class="categoryTitleSet">PENDING</p>	
+									<input type="input" name="" class="categoryNumberSet" value="0" disabled="true">
+								</td>
+								<td class = "tdCategory" align="center">
+									<p class="categoryTitleSet">CLOSED</p>
+									<input type="input" name="" class="categoryNumberSet" value="0" align="center" disabled="true">
+								</td>
+							</table>
+						</div> -->
+					</div>
+				</td>
+				<td class = "tdTable2">
+					<!-- <div class = "boardTable2" align="center">
+						<div class = "trList1" align="center">
+							<p class="ListTitle">SERVICE DETAILS</p>	
+						</div>
+						<div class = "trList2" id = "trList2" align="center">
+								<input type="text" name="ticketID1" id="ticketID1" disabled="true" class="ticketID" value="R1-0000001">
+								<input type="text" name="ticketTitle1" id="ticketTitle1" class="ticketTitle" disabled="true" value="Replacing Bed In room 203B" >
+								<input type="text" name="ticketLevel1" id="ticketLevel1" disabled="true" class="ticketLevel" value="On Process" >
+								<input type="text" name="ticketItem1" id="ticketItem1" class="ticketItem" disabled="true" value="4 beds">
+								<textarea name="ticketDesc1" id="ticketDesc1" class="ticketDesc" disabled="true" wrap="soft">WEULsYhyZQNvtlrcSb8Ye2FVnOVFSNk11LR6vyzlres3zWJYVK4BHDOYk9E946a9PhzOAzy2B1LRad0R0EqFJtKmssv2Bgvm7liLAfriGTr5j5SQVEsNATq1Tf015fMDJyhdvJxpgEMsTegc6fNJcTza0rZWocELFhkIvy6XMNiNTdqz3tClx1PVKe5ttzOBN34ZGcaDGSb27r7xPuorzizETME4D9uz0eycVOkWaNaLZe4kYydpy1ApVg</textarea>
+								<button name="ticketOpen1" id="ticketOpen1" class ="ticketOpen" onclick="openDetailTicket()" value="1">OPEN</button>
+
+						</div>
+					</div> -->
+				</td>
+				<td class = "tdTable3">
+					<div class = "boardTable3" align="center">
+						<table class = "funtionButton">
+							<tr class = "tdFuntion">
+								<img src="D:/My Documents/project/project2/projecct/image/Picture5.png" class = "ticketAdd" onclick="openTicketAdd()">
+							</tr >
+							<tr class = "tdFuntion"> 
+								<img src="D:/My Documents/project/project2/projecct/image/Picture7.png" class = "ticketAdd" onclick="openLogout()">
+							</tr>	
+						</table>
+					</div>
+				</td>
+
+				<div class ="addTicketForm" id ="addTicketForm">
+					<input type="text" name="" class = "formText" align="center" placeholder="Ticket Title">
+					<select name="dd_type" id="dd_type" class="formText" >
+							<option value="" disabled="" selected="">Select Category:</option>
+							<option value = "r1">Repair</option>
+							<option value = "r2">Replace</option>
+							<option value = "r3">Request</option>
+					</select>
+					<textarea  name="" class = "formText2" align="center" placeholder="Ticket description here..." maxlength="300" cols="50" ></textarea>
+					<input type="Button" name="" class ="ticketSubmit" value="SUBMIT">
+					<button name="" class ="ticketCancel" value="CANCEL" onclick="closeForm()">CANCEL</button>
+				</div>
+				<div class ="logOutForm" id ="logOutForm">
+					<button name="" class ="ticketSubmit" onclick="">LOGOUT</button>
+					<button name="" class ="ticketCancel" value="CANCEL" onclick="closeLogout()">CANCEL</button>
+				</div>
+				<div class ="ticketDetail" id ="ticketDetail" align="center">
+					<input type="text" name="" class = "formText3" align="center" placeholder="Service Number" disabled="true">
+					<input type="text" name="" class = "formText3" align="center" placeholder="Service Level" disabled="true">
+					<input type="text" name="" class = "formText4" align="center" placeholder="Service Category" disabled="true" value="Request">
+					<input type="text" name="" class = "formText5" align="center" placeholder="Service Title" disabled="true">
+					<input type="text" name="" class = "formTexts7" align="center" placeholder="Service Time and Date" disabled="true">
+					<textarea  name="" class = "formText6" align="center" placeholder="Service description here..." maxlength="300" cols="50" disabled="true" >WEULsYhyZQNvtlrcSb8Ye2FVnOVFSNk11LR6vyzlres3zWJYVK4BHDOYk9E946a9PhzOAzy2B1LRad0R0EqFJtKmssv2Bgvm7liLAfriGTr5j5SQVEsNATq1Tf015fMDJyhdvJxpgEMsTegc6fNJcTza0rZWocELFhkIvy6XMNiNTdqz3tClx1PVKe5ttzOBN34ZGcaDGSb27r7xPuorzizETME4D9uz0eycVOkWaNaLZe4kYydpy1ApVg</textarea>
+					<input type="text" name="" class = "formTexts7" align="center" placeholder="Service Assigned" disabled="true">
+					<input type="text" name="" class = "formTexts7" align="center" value="Service Process Conversation" disabled="true">
+					<div class = "ticketConversation" align="center" id="ticketConversation">
+						<input type="text" name="" class = "formText7" maxlength="20" placeholder="cn2YGJ7HWGl7IYtXmNHP7Rpptf2bJ5nXNg0NB9MA
+">
+						<input type="text" name="" class = "formText8"  maxlength="20" placeholder="Reply Here...">
+						<input type="text" name="" class = "formText7"  maxlength="20" placeholder="Reply Here...">
+				</div>
+					<input type="text" name="" class = "formText" align="center" placeholder="Reply Here...">
+					<button name="" class ="ticketSubmit" onclick="convo_add()">SUBMIT</button>
+					<button name="" class ="ticketSubmit" onclick="" style="background: #add8e6;">CLOSE Service</button>
+					<button name="" class ="ticketCancel" value="CANCEL" onclick="closeTicketDetail()">CANCEL</button>
+				</div>
+			</table>
+		</body>
+	</form>
+</html>
+	
+
+<script type="text/javascript">
+	var i = 2;
+	var c = 2;
+	function onload_add_feed()
+	{	
+		var a = document.createElement("INPUT");
+		var b = document.createElement("INPUT");
+		var d = document.createElement("INPUT");
+		var c = document.createElement("INPUT");
+		var e = document.createElement("TEXTAREA");
+		var f = document.createElement("BUTTON");
+
+		a.setAttribute("type", "text");
+		b.setAttribute("type", "text");
+		c.setAttribute("type", "text");
+		d.setAttribute("type", "text");			
+
+		a.setAttribute("name", "ticketID" + i);
+		b.setAttribute("name", "ticketTitle" + i);
+		c.setAttribute("name", "ticketItem" + i);
+		e.setAttribute("name", "ticketDesc" + i);
+		d.setAttribute("name", "ticketLevel" + i);
+		f.setAttribute("name", "ticketLevel" + i);
+
+		a.setAttribute("id", "ticketID" + i);
+		b.setAttribute("id", "ticketTitle" + i);
+		c.setAttribute("id", "ticketItem" + i);
+		e.setAttribute("id", "ticketDesc" + i);
+		d.setAttribute("id", "ticketLevel" + i);
+		f.setAttribute("name", "ticketLevel" + i);
+
+		a.setAttribute("value", "adadadasd");
+		b.setAttribute("value", "asdasdadasd");
+		c.setAttribute("value", "Assigned to:");
+		d.setAttribute("value", "asdada");
+
+
+		a.setAttribute("class", "ticketID2");
+		b.setAttribute("class", "ticketTitleAdd");
+		c.setAttribute("class", "ticketItem");
+		e.setAttribute("class", "ticketDescAdd");
+		d.setAttribute("class", "ticketLevelAdd");
+		f.setAttribute("class", "ticketOpen");
+
+		a.setAttribute("disabled", "true");
+		b.setAttribute("disabled", "true");
+		c.setAttribute("disabled", "true");
+		e.setAttribute("disabled", "true");
+		d.setAttribute("disabled", "true");
+
+		e.appendChild(document.createTextNode("At w3schools.com you will learn how to make a website."));
+		f.appendChild(document.createTextNode("OPEN"));
+		document.getElementById("trList2").appendChild(a);
+		document.getElementById("trList2").appendChild(b);
+		document.getElementById("trList2").appendChild(d);
+		document.getElementById("trList2").appendChild(c);
+		document.getElementById("trList2").appendChild(e);
+		document.getElementById("trList2").appendChild(f);
+		i++;
+	}	
+
+	function convo_add()
+	{	
+		var a = document.createElement("INPUT");
+
+		a.setAttribute("type", "text");		
+		a.setAttribute("name", "convo_add" + i);
+		a.setAttribute("id", "ticketID" + i);
+		a.setAttribute("value", "");
+		a.setAttribute("class", "formText7");
+		a.setAttribute("maxlength", "40");
+		a.setAttribute("disabled", "true");
+		document.getElementById("ticketConversation").appendChild(a);
+		c++;
+	}			
+
+	function openTicketAdd() {
+	  document.getElementById("addTicketForm").style.display = "block";
+	  document.getElementById("logOutForm").style.display = "none";
+	   document.getElementById("ticketDetail").style.display = "none";
+	}
+	function openLogout() {
+	  document.getElementById("logOutForm").style.display = "block";
+	  document.getElementById("addTicketForm").style.display = "none";
+	   document.getElementById("ticketDetail").style.display = "none";
+	}
+
+	function closeLogout() {
+	  document.getElementById("logOutForm").style.display = "none";
+	}
+
+	function openDetailTicket() {
+	  document.getElementById("ticketDetail").style.display = "block";
+	 document.getElementById("logOutForm").style.display = "none";
+	   document.getElementById("addTicketForm").style.display = "none";
+	  document.getElementById("addUserForm").style.display = "none";
+	  document.getElementById("editUserForm").style.display = "none";
+	   event.preventDefault();
+	}
+
+	function closeTicketDetail() {
+	  document.getElementById("ticketDetail").style.display = "none";
+	}					
+</script>
